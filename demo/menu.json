@@ -1,0 +1,31 @@
+[
+  {
+    "name": "product list",
+    "icon": "glyphicon glyphicon-shopping-cart"
+  },
+  {
+    "name": "contact",
+    "icon": "glyphicon glyphicon-shopping-cart",
+    "sub": [
+      {
+        "name": "shops",
+        "group": "shops",
+        "icon": "glyphicon glyphicon-shopping-cart",
+        "sub": [
+          {
+            "name": "2a I",
+            "icon": "glyphicon glyphicon-shopping-cart"
+          },
+          {
+            "name": "2a II",
+            "icon": "glyphicon glyphicon-shopping-cart"
+          }
+        ]
+      },
+      {
+        "name": "offices",
+        "icon": "glyphicon glyphicon-shopping-cart"
+      }
+    ]
+  }
+]
