@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="jsonMenu">
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -18,5 +18,31 @@
 <script src="../libs/angular/angular.js"></script>
 <script src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="../src/json-menu.js"></script>
+<script>
+    angular
+            .module('app', ['ui.router', 'jsonMenu'])
+            .config(function ($stateProvider) {
+                $stateProvider
+                        .state('product-list', {
+                            url: "/product-list",
+                            template: "<h1>product list </h1>"
+                        })
+                        .state('contact', {
+                            url: "/contact",
+                            template: "<h1>contact</h1><ui-view></ui-view>"
+                        })
+                        .state('contact.shops', {
+                            url: "/shop/:id",
+                            template: "<h1>id: {{id}}</h1>",
+                            controller: function ($scope, $stateParams) {
+                                $scope.id = $stateParams.id;
+                            }
+                        })
+                        .state('contact.offices', {
+                            url: "/offices",
+                            template: "<h1>offices: tralal</h1>"
+                        })
+            });
+</script>
 </body>
 </html>

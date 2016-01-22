@@ -1,34 +1,7 @@
 angular
-    .module('jsonMenu', ['ui.router'])
-    .config(function ($stateProvider) {
-        $stateProvider
-            .state('product-list', {
-                url: "/product-list",
-                template: "<h1>product list </h1>"
-            })
-            .state('contact', {
-                url: "/contact",
-                template: "<h1>contact</h1><ui-view></ui-view>"
-            })
-            .state('contact.shops', {
-                url: "/shop/:id",
-                template: "<h1>id: {{id}}</h1>",
-                controller: function ($scope, $stateParams) {
-                    $scope.id = $stateParams.id;
-                }
-            })
-            .state('contact.offices', {
-                url: "/offices",
-                template: "<h1>offices: tralal</h1>",
-                controller: function ($scope) {
-
-                }
-            })
-
-    })
+    .module('jsonMenu', [])
     .directive('jsonMenu', function ($state) {
         return {
-            template: "<h1>sdf</h1>",
             link: function (scope, container, attrs) {
                 $.get(attrs.jsonMenu, function (responseData) {
                     var data = typeof responseData === 'string' ? JSON.parse(responseData) : responseData;
