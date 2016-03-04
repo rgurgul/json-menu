@@ -12,7 +12,7 @@ angular
                     arr.forEach(function (obj) {
                         var li = $("<li>");
                         var a = $("<a>")
-                            .text(obj.name)
+                            .text(" " + obj.name)
                             .on('click', function () {
                                 $(this)
                                     .parent()
