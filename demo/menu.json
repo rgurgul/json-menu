@@ -1,6 +1,7 @@
 [
   {
     "name": "product list",
+    "link": "items",
     "icon": "glyphicon glyphicon-shopping-cart"
   },
   {
@@ -8,9 +9,9 @@
     "icon": "glyphicon glyphicon-shopping-cart",
     "sub": [
       {
-        "name": "shops",
-        "group": "shops",
+        "name": "aaa",
         "icon": "glyphicon glyphicon-shopping-cart",
+        "group": "aaa",
         "sub": [
           {
             "name": "2a I",
@@ -24,7 +25,23 @@
       },
       {
         "name": "offices",
+        "link": "offices",
         "icon": "glyphicon glyphicon-shopping-cart"
+      }
+    ]
+  },
+  {
+    "name": "shops",
+    "icon": "glyphicon glyphicon-home",
+    "group": "shops",
+    "sub": [
+      {
+        "name": "shop1",
+        "icon": "glyphicon glyphicon-info-sign"
+      },
+      {
+        "name": "shop2",
+        "icon": "glyphicon glyphicon-info-sign"
       }
     ]
   }

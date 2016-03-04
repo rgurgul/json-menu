@@ -1,8 +1,5 @@
-nav .menu {
-    margin-left: 20px;
-}
 
-a {
+.menu a {
     background-color: #2F4050;
     border-bottom: 1px solid #293846;
     color: white;
@@ -11,28 +8,28 @@ a {
     cursor: pointer;
 }
 
-a:hover, a:active, a:link, a:visited {
+.menu a:hover, .menu a:active, .menu a:link, .menu a:visited {
     color: white;
     text-decoration: none;
 }
 
-ul[data-level='0'] > li > a {
+.menu[data-level='0'] > li > a {
     padding-left: 20px;
 }
 
-ul[data-level='1'] > li > a {
+.menu ul[data-level='1'] > li > a {
     padding-left: 40px;
 }
 
-ul[data-level='2'] > li > a {
+.menu ul[data-level='2'] > li > a {
     padding-left: 60px;
 }
 
-ul[data-level='3'] > li > a {
+.menu ul[data-level='3'] > li > a {
     padding-left: 80px;
 }
 
-.active {
+.menu .active {
     border-left: 5px solid #18A689;
     transition: .2s;
 }

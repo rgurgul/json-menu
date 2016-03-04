@@ -33,9 +33,15 @@ angular
                                     'data-level': parentLevel + 1,
                                     'group': obj.group,
                                     'name': obj.name
-                                })
-                                .hide();
+                                });
                             li.append(ulSub);
+                            var reg = new RegExp(obj.name);
+                            var ok = reg.test($state.current.name);
+                            if (ok) {
+                                ulSub.show();
+                            } else {
+                                ulSub.hide();
+                            }
                             createMenu(obj.sub, ulSub);
                         } else {
                             a.css('opacity', .9);
@@ -53,7 +59,7 @@ angular
                             var id = a.parent().index();
                             $state.go(linksStorage.join('.'), {id: id});
                         } else {
-                            linksStorage.push(obj.name);
+                            linksStorage.push(obj.link);
                             $state.go(linksStorage.join('.').replace(/\s/g, '-'));
                         }
                     });

@@ -14,8 +14,8 @@
 
 <div ui-view></div>
 
-<script src="../libs/jquery/dist/jquery.js"></script>
 <script src="../libs/angular/angular.js"></script>
+<script src="../libs/jquery/dist/jquery.js"></script>
 <script src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="../src/json-menu.js"></script>
 <script>
@@ -23,16 +23,16 @@
             .module('app', ['ui.router', 'jsonMenu'])
             .config(function ($stateProvider) {
                 $stateProvider
-                        .state('product-list', {
-                            url: "/product-list",
+                        .state('items', {
+                            url: "/items",
                             template: "<h1>product list </h1>"
                         })
                         .state('contact', {
                             url: "/contact",
                             template: "<h1>contact</h1><ui-view></ui-view>"
                         })
-                        .state('contact.shops', {
-                            url: "/shop/:id",
+                        .state('contact.aaa', {
+                            url: "/aaa/:id",
                             template: "<h1>id: {{id}}</h1>",
                             controller: function ($scope, $stateParams) {
                                 $scope.id = $stateParams.id;
@@ -42,7 +42,14 @@
                             url: "/offices",
                             template: "<h1>offices: tralal</h1>"
                         })
-            });
+                        .state('shops', {
+                            url: '/shops/:id',
+                            template: "<h1>shop {{id}}</h1>",
+                            controller: function ($scope, $stateParams) {
+                                $scope.id = $stateParams.id;
+                            }
+                        })
+            })
 </script>
 </body>
 </html>
