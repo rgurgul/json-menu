@@ -1,6 +1,6 @@
 angular
     .module('jsonMenu', [])
-    .directive('jsonMenu', function ($state) {
+    .directive('jsonMenu', function ($state, $timeout) {
         return {
             link: function (scope, container, attrs) {
                 $.get(attrs.jsonMenu, function (responseData) {
@@ -12,7 +12,7 @@ angular
                     arr.forEach(function (obj) {
                         var li = $("<li>");
                         var a = $("<a>")
-                            .text(" " + obj.name)
+                            .text(" " + obj.text)
                             .on('click', function () {
                                 $(this)
                                     .parent()
@@ -35,13 +35,13 @@ angular
                                     'name': obj.name
                                 });
                             li.append(ulSub);
-                            var reg = new RegExp(obj.name);
-                            var ok = reg.test($state.current.name);
-                            if (ok) {
-                                ulSub.show();
-                            } else {
-                                ulSub.hide();
-                            }
+                            $timeout(function () {
+                                if ($state.includes(obj.name)) {
+                                    ulSub.show();
+                                } else {
+                                    ulSub.hide();
+                                }
+                            });
                             createMenu(obj.sub, ulSub);
                         } else {
                             a.css('opacity', .9);
@@ -59,8 +59,8 @@ angular
                             var id = a.parent().index();
                             $state.go(linksStorage.join('.'), {id: id});
                         } else {
-                            linksStorage.push(obj.link);
-                            $state.go(linksStorage.join('.').replace(/\s/g, '-'));
+                            linksStorage.push(obj.name);
+                            $state.go(linksStorage.join('.'));
                         }
                     });
                 }

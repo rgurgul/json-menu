@@ -1,46 +1,49 @@
 [
   {
-    "name": "product list",
-    "link": "items",
+    "text": "Lista produktów",
+    "name": "items",
     "icon": "glyphicon glyphicon-shopping-cart"
   },
   {
     "name": "contact",
+    "text": "Kontakt ttt",
     "icon": "glyphicon glyphicon-shopping-cart",
     "sub": [
       {
         "name": "aaa",
+        "text": "Aaa aaa",
         "icon": "glyphicon glyphicon-shopping-cart",
         "group": "aaa",
         "sub": [
           {
-            "name": "2a I",
+            "text": "2a I",
             "icon": "glyphicon glyphicon-shopping-cart"
           },
           {
-            "name": "2a II",
+            "text": "2a II",
             "icon": "glyphicon glyphicon-shopping-cart"
           }
         ]
       },
       {
         "name": "offices",
-        "link": "offices",
+        "text": "Biura",
         "icon": "glyphicon glyphicon-shopping-cart"
       }
     ]
   },
   {
+    "text": "Sklepy yyy",
     "name": "shops",
     "icon": "glyphicon glyphicon-home",
     "group": "shops",
     "sub": [
       {
-        "name": "shop1",
+        "text": "sklep 1",
         "icon": "glyphicon glyphicon-info-sign"
       },
       {
-        "name": "shop2",
+        "text": "sklep 2",
         "icon": "glyphicon glyphicon-info-sign"
       }
     ]
