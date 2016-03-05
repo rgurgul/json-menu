@@ -36,7 +36,9 @@ angular
                                 });
                             li.append(ulSub);
                             $timeout(function () {
-                                if ($state.includes(obj.name)) {
+                                var reg = new RegExp(obj.name);
+                                var ok = reg.test($state.current.name);
+                                if (ok) {
                                     ulSub.show();
                                 } else {
                                     ulSub.hide();
@@ -48,6 +50,20 @@ angular
                             a.on('click', function () {
                                 setActive(this);
                                 go(a, obj);
+                            });
+                            $timeout(function () {
+                                var idx = a.parent().index();
+                                createLink(a, [], function (linksStorage) {
+                                    !a.closest('ul').attr('group') && linksStorage.push(obj.name);
+                                    if (linksStorage.join('.') == $state.current.name) {
+                                        if ($state.params.id && $state.params.id == idx) {
+                                            setActive(a);
+                                        }
+                                        if (!$state.params.id) {
+                                            setActive(a);
+                                        }
+                                    }
+                                });
                             });
                         }
                     });
